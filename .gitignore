@@ -79,6 +79,10 @@ web_modules/
 .env.production.local
 .env.local
 
+# Vite / build caches
+.vite/
+frontend/.vite/
+
 # parcel-bundler cache
 .cache
 .parcel-cache
