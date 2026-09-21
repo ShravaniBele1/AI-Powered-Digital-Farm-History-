@@ -1,0 +1,17 @@
+services:
+  # All-in-One Full-Stack Web Service (Frontend + Backend on single URL)
+  - type: web
+    name: krishigatha-ai
+    env: node
+    plan: free
+    buildCommand: npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix Backend && npm run build --prefix Backend
+    startCommand: npm start --prefix Backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000
